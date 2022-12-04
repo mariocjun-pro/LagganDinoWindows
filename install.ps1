@@ -1,8 +1,7 @@
 Write-Host "Verificando se chocolatey está instalado..."
-Test-Path $env:ChocolateyInstall | Out-Null
-if ($? -eq $false) {
-    Write-Host "Chocolatey esta instalado, OK!"
-} else {
+if (Get-Command choco -ErrorAction SilentlyContinue) {
+    Write-Host "chocolatey está instalado, pulando..."
+}else {
     Write-Host "Chocolatey nao esta instalado. Instalando, aguarde..."
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex | Out-Null
 }
