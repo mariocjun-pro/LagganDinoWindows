@@ -15,15 +15,16 @@ set(SFML_DIR "${CMAKE_CURRENT_LIST_DIR}/libs/SFML/lib/cmake/SFML")
 file(COPY libs/SFML/bin/openal32.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Criando a lista de flags para o compilador
-list(APPEND FLAGS "-std=c++23") # C++11
-list(APPEND FLAGS "-Wall")        # Warnings
-list(APPEND FLAGS "-Wextra")      # Warnings extras
+list(APPEND FLAGS "-std=c++11") # C++11
+list(APPEND FLAGS "-w")         # Desabilita os warnings (para ativar, comente essa linha)
+list(APPEND FLAGS "-Wall")      # Warnings
+list(APPEND FLAGS "-Wextra")    # Warnings extras
 list(JOIN FLAGS " " FLAGS)
 
 # Adiciona flags de compilação para o projeto
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${FLAGS}")
 
-link_libraries(stdc++fs)
+#link_libraries(stdc++fs)
 
 file(GLOB SRC_FILES CONFIGURE_DEPENDS "src/*.h" "src/*.cpp")
 add_executable(${PROJECT_NAME} ${SRC_FILES})
