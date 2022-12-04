@@ -32,15 +32,14 @@
 
 // Windows' HWND is a typedef on struct HWND__*
 #if defined(SFML_SYSTEM_WINDOWS)
-    struct HWND__;
+struct HWND__;
 #endif
 
-namespace sf
-{
+namespace sf {
 #if defined(SFML_SYSTEM_WINDOWS)
 
     // Window handle is HWND (HWND__*) on Windows
-    typedef HWND__* WindowHandle;
+    typedef HWND__ *WindowHandle;
 
 #elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
 
