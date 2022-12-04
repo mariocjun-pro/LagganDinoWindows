@@ -12,6 +12,10 @@
 
 ``` Set-ExecutionPolicy Bypass -Scope CurrentUser  ```
 
+#### Acesse a pasta do projeto e clique com o botão direito do mouse em algum lugar vazio da pasta e selecione a opção "Abrir janela do PowerShell aqui", ou abra o powershell e navegue até a pasta do projeto. 
+
+``` cd "Caminho\Para\A\Pasta\Do\Projeto" ```
+
 #### Após isso execute o script de instalação do LagganDino com o comando abaixo:
 
 ``` .\install.ps1 ```

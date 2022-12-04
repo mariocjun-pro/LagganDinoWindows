@@ -9,7 +9,7 @@ if (Get-Command choco -ErrorAction SilentlyContinue) {
 RefreshEnv.cmd
 
 Write-Host "Verificando se o cmake ver. 3.24.3 esta instalado..."
-Test-Path $env:ChocolateyInstall\bin\cmake.exe | Out-Null
+Test-Path 'C:\Program Files\CMake\bin\cmake.exe' | Out-Null
 if ($? -eq $false) {
     Write-Host "cmake esta instalado, OK!"
 } else {
