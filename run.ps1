@@ -22,6 +22,11 @@ Write-Host "Executando LagganDino..."
 Set-Location $dir\build
 .\LagganDino.exe
 
+Set-Location $dir | Out-Null
+
+exit 0
+
+
 
 
 
